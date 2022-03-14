@@ -10,7 +10,7 @@ class EntrepriseController extends Controller
 {
     public function index()
     {
-        $entreprises = Entreprise::all(); 
+        $entreprises = Entreprise::with('quartier')->get(); 
         return view('entreprises/index', compact('entreprises'));
     }
 
@@ -25,18 +25,12 @@ class EntrepriseController extends Controller
         // dd($request->all());
         Entreprise::create($request->all());
         return redirect('/entreprise');
-
-        // $entreprise = new Entreprise();
-        // $entreprise->nom = $request->nom;
-        // $entreprise->siege = $request->siege;
-        // $entreprise->telephone = $request->telephone;
-        // $entreprise->dateCreation = $request->dateCreation;
-        // $entreprise->registre = $request->registre;
-        // $entreprise->ninea = $request->ninea;
-        // $entreprise->siteWeb = $request->siteWeb;
-        // $entreprise->dispositifFormation = $request->dispositifFormation;
-        // $entreprise->organigramme = $request->organigramme;
-        // $entreprise->contrat = $request->contrat;
-
     }
+
+    // public function delete(request $request)
+    // {
+    //     // dd($request->all());
+    //     Entreprise::find($id)->delete();
+    //     return redirect('/entreprise');
+    // }
 }

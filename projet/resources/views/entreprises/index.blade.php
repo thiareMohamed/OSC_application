@@ -27,9 +27,7 @@
                     <th>Registre de commerce</th>
                     <th>Ninea</th>
                     <th>Page WEB</th>
-                    <th>Dispositif de formation</th>
-                    <th>Organigramme</th>
-                    <th>Contract</th>
+                    <th>Quartier</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -45,12 +43,10 @@
                     <th>{{$entreprise->registre}}</th>
                     <th>{{$entreprise->ninea}}</th>
                     <th>{{$entreprise->siteWeb}}</th>
-                    <th>{{$entreprise->dispositifFormation}}</th>
-                    <th>{{$entreprise->organigramme}}</th>
-                    <th>{{$entreprise->contrat}}</th>
+                    <th>{{$entreprise->quartier->nom}}</th>
                     <th><i class="bi bi-eye-fill text-secondary" id="{{$entreprise->id}}"></i> <i class="bi bi-screwdriver text-success" id="{{$entreprise->id}}"></i> <i class="bi bi-x-circle text-danger" id="{{$entreprise->id}}"></i></th>
                 </tr>
-                @endforeach
+            @endforeach
 
             </tbody>
         </table>

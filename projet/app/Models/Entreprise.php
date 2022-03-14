@@ -9,4 +9,9 @@ class Entreprise extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function quartier()
+    {
+        return $this->belongsTo(Quartier::class);
+    }
 }
