@@ -45,7 +45,7 @@
      <!-- CSS only -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>OSC-Entreprises</title>
+    <title>OSC-Entreprise</title>
 </head>
 <body>
     <main class="container letter">
@@ -55,19 +55,19 @@
             </a>
         </div>
         <div class="d-flex justify-content-between   pt-3">
-            <h2 class="display-6 pt-3 text-warning">{{$entreprises->nom}}</h2>
+            <h2 class="display-6 pt-3 text-warning">{{$entreprise->nom}}</h2>
             <div class="">
-              <b>Date de creation :</b>  {{$entreprises->dateCreation}} <br/>
-              <b>Ninea :</b>  {{$entreprises->ninea}}
+              <b>Date de creation :</b>  {{$entreprise->dateCreation}} <br/>
+              <b>Ninea :</b>  {{$entreprise->ninea}}
 
             </div>
         </div>
         <div class="mt-5 text-center">
-            <h5><b>Siege social :</b> {{$entreprises->siege}}</h5><br/>
-            <h5><b>Telephone :</b> {{$entreprises->telephone}}</h5><br/>
-            <h5><b>Registre :</b> {{$entreprises->registre}}</h5><br/>
-            <h5><b>Site web :</b> {{$entreprises->siteWeb}}</h5><br/>
-            <h5><b>Localite :</b> {{$entreprises->quartier->nom}}</h5><br/>
+            <h5><b>Siege social :</b> {{$entreprise->siege}}</h5><br/>
+            <h5><b>Telephone :</b> {{$entreprise->telephone}}</h5><br/>
+            <h5><b>Registre :</b> {{$entreprise->registre}}</h5><br/>
+            <h5><b>Site web :</b> {{$entreprise->siteWeb}}</h5><br/>
+            <h5><b>Localite :</b> {{$entreprise->quartier->nom}}</h5><br/>
         </div>
     </main>
 </body>

@@ -13,7 +13,7 @@
     <main class="container">
         <div class="d-flex justify-content-between   pt-3">
             <h2 class="display-6 pt-3">La liste des partenaires</h2>
-            <button class="btn btn-warning btn-sm">Ajouter une partenaire</button>
+            <button class="btn btn-warning btn-sm" onclick="window.location.href = '/entreprise/create'">Ajouter une partenaire</button>
         </div>
     
         <table class="table table-hover mt-3">
@@ -45,13 +45,13 @@
                     <th>{{$entreprise->siteWeb}}</th>
                     <th>{{$entreprise->quartier->nom}}</th>
                     <th>
-                        <a href="/entreprise/{{$entreprise->id}}">
+                        <a href="{{route('entreprises.show',[$entreprise])}}">
                             <i class="bi bi-eye-fill text-secondary"></i>
                         </a>  
                         <a href="">
                             <i class="bi bi-screwdriver text-success"></i>
                         </a>
-                        <a href="">
+                        <a href="{{route('entreprises.delete',[$entreprise])}}">
                             <i class="bi bi-x-circle text-danger"></i>
                         </a>
                     </th>

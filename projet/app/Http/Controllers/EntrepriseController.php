@@ -27,16 +27,14 @@ class EntrepriseController extends Controller
         return redirect('/entreprise');
     }
 
-    public function show(int $id)
+    public function show(Entreprise $entreprise)
     {
-        $entreprises = Entreprise::find($id); 
-        return view('entreprises/show', compact('entreprises'));
+        return view('entreprises.show', compact('entreprise'));
     }
 
-    // public function delete(request $request)
-    // {
-    //     // dd($request->all());
-    //     Entreprise::find($id)->delete();
-    //     return redirect('/entreprise');
-    // }
+    public function delete(Entreprise $entreprise)
+    {
+        $entreprise->delete();
+        return redirect('/entreprise');
+    }
 }
