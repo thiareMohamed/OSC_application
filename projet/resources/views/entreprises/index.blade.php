@@ -44,7 +44,17 @@
                     <th>{{$entreprise->ninea}}</th>
                     <th>{{$entreprise->siteWeb}}</th>
                     <th>{{$entreprise->quartier->nom}}</th>
-                    <th><i class="bi bi-eye-fill text-secondary" id="{{$entreprise->id}}"></i> <i class="bi bi-screwdriver text-success" id="{{$entreprise->id}}"></i> <i class="bi bi-x-circle text-danger" id="{{$entreprise->id}}"></i></th>
+                    <th>
+                        <a href="/entreprise/{{$entreprise->id}}">
+                            <i class="bi bi-eye-fill text-secondary"></i>
+                        </a>  
+                        <a href="">
+                            <i class="bi bi-screwdriver text-success"></i>
+                        </a>
+                        <a href="">
+                            <i class="bi bi-x-circle text-danger"></i>
+                        </a>
+                    </th>
                 </tr>
             @endforeach
 

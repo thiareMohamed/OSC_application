@@ -25,5 +25,7 @@ Route::get('/pays', [PaysController::class,'index']);
 Route::get('/entreprise', [EntrepriseController::class,'index']);
 Route::get('/entreprise/create', [EntrepriseController::class,'create']);
 Route::post('/entreprise/store', [EntrepriseController::class,'store']);
+Route::get('/entreprise/{id}', [EntrepriseController::class,'show']);
+
 
 

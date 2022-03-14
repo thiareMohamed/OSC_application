@@ -27,6 +27,12 @@ class EntrepriseController extends Controller
         return redirect('/entreprise');
     }
 
+    public function show(int $id)
+    {
+        $entreprises = Entreprise::find($id); 
+        return view('entreprises/show', compact('entreprises'));
+    }
+
     // public function delete(request $request)
     // {
     //     // dd($request->all());
