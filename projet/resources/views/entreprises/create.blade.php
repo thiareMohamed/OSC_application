@@ -11,57 +11,66 @@
 <body>
     <main class="container">
         <h3 class="h3">Formulaire d'ajout partenaire</h3>
-        <form class="row g-3">
+        <form class="row g-3"action="/entreprise/store" method="post">
+            @csrf
             <div class="col-md-6">
                 <label for="inputNom4" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="inputNom4">
+                <input type="text" class="form-control" id="inputNom4" name="nom">
             </div>
             <div class="col-md-6">
                 <label for="inputSiege4" class="form-label">Siege</label>
-                <input type="text" class="form-control" id="inputSiege4">
+                <input type="text" class="form-control" id="inputSiege4" name="siege">
             </div>
             <div class="col-12">
                 <label for="inputTelephone" class="form-label">Telephone</label>
-                <input type="number" class="form-control" id="inputTelephone" placeholder="Telephone">
+                <input type="number" class="form-control" id="inputTelephone" placeholder="Telephone" name="telephone">
             </div>
             <div class="col-12">
                 <label for="inputDateCreation" class="form-label">Date de creation</label>
-                <input type="date" class="form-control" id="inputDateCreation" placeholder="Date de creation">
+                <input type="date" class="form-control" id="inputDateCreation" placeholder="Date de creation" name="dateCreation">
             </div>
             <div class="col-md-6">
                 <label for="inputRegistre" class="form-label">Registre</label>
-                <input type="text" class="form-control" id="inputRegistre">
+                <input type="text" class="form-control" id="inputRegistre" name="registre">
             </div>
             <div class="col-md-3">
                 <label for="inputNinea" class="form-label">Ninea</label>
-                <input type="text" class="form-control" id="inputNinea">
+                <input type="text" class="form-control" id="inputNinea" name="ninea">
             </div>
             <div class="col-md-3">
                 <label for="inputSiteWeb" class="form-label">Site Web</label>
-                <input type="text" class="form-control" id="inputSiteWeb">
+                <input type="text" class="form-control" id="inputSiteWeb" name="siteWeb">
             </div>
 
             <div class="col-md-4">
                 <label for="inputDispositifFormation" class="form-label">Dispositif de formation</label>
-                <select id="inputDispositifFormation" class="form-select">
-                    <option selected>faux</option>
+                <select id="inputDispositifFormation" class="form-select" name="dispositifFormation">
+                    <option value="false" selected>faux</option>
                     <option>vrai</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="inputOrganigramme" class="form-label">Organigramme</label>
-                <select id="inputOrganigramme" class="form-select">
-                    <option selected>faux</option>
-                    <option>vrai</option>
+                <select id="inputOrganigramme" class="form-select"  name="organigramme">
+                    <option value="false" selected>faux</option>
+                    <option value="true">vrai</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="inputContrat" class="form-label">Contracts</label>
-                <select id="inputContrat" class="form-select">
-                    <option selected>faux</option>
-                    <option>vrai</option>
+                <select id="inputContrat" class="form-select"  name="contrat">
+                    <option value="false" selected>faux</option>
+                    <option  value="true" >vrai</option>
                 </select>
-            </div>  
+            </div> 
+            <div class="col-md-4">
+                <label for="inputQuartier" class="form-label">Quartier</label>
+                <select id="inputQuartier" class="form-select"  name="quartier_id">
+                    @foreach($quartier as $quart)
+                        <option value="{{$quart->id}}" selected>{{$quart->nom}}</option>
+                    @endforeach;
+                </select>
+            </div> 
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Enregistrer</button>
             </div>
